@@ -1,0 +1,41 @@
+{
+  "name": "genpark-swarm-state-checkpoint-rollback-engine-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Distributed swarm state snapshotting and transactional rollback engine restoring consistent states upon pipeline failure.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "multi-agent-orchestration",
+  "tags": [
+    "state-checkpoint",
+    "swarm-rollback",
+    "distributed-transactions",
+    "event-sourcing",
+    "consistency-engine"
+  ],
+  "inputs": {
+    "pipeline_id": {
+      "type": "string",
+      "default": "pipe_cloud_deploy_991"
+    },
+    "action": {
+      "type": "string",
+      "default": "TRIGGER_ROLLBACK_TO_SAFE_CHECKPOINT"
+    }
+  },
+  "outputs": {
+    "rollback_engine_id": {
+      "type": "string"
+    },
+    "rollback_executed": {
+      "type": "boolean"
+    },
+    "last_safe_checkpoint_id": {
+      "type": "string"
+    },
+    "system_consistency_verdict": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
